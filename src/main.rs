@@ -98,22 +98,26 @@ fn main() {
     let mut tgt_raw_hash = [0; 32];
     HEXLOWER.decode_mut(hash_tgt,&mut tgt_raw_hash).unwrap_or_else(|_| unsafe {unreachable_unchecked()});
     let hash_tgt = tgt_raw_hash;
-    
-    let candidates: Vec<String>  = io::stdin().lock().lines().map(|x| x.unwrap()).collect();
-    
+
     println!("begining cracking");
     
-    let cracked: Vec<&String> = 
-        candidates
-        //.map(|l| l.unwrap_or_else(|_| unsafe {unreachable_unchecked()}))
-        .iter()
-        .par_bridge()
-        .filter(|candidate| {
-            let mut result_hash = [0; 32];
-            genhash(candidate.as_bytes(),hash_salt,&mut result_hash);
-            return result_hash == hash_tgt
+    loop {
+    	let candidates: Vec<String>  = io::stdin().lock().lines().take(1000).map(|x| x.unwrap()).collect();
+
+	//println!("working");
+    
+        let cracked: Vec<()> = 
+            candidates
+            //.map(|l| l.unwrap_or_else(|_| unsafe {unreachable_unchecked()}))
+            .iter()
+            .par_bridge()
+            .map(|candidate| {
+                let mut result_hash = [0; 32];
+                genhash(candidate.as_bytes(),hash_salt,&mut result_hash);
+                if (result_hash == hash_tgt) {
+                    println!("candidate: {}",candidate)
+            }
         })
         .collect();
-    
-    println!("{:?}",cracked)
+    }
 }
