@@ -32,16 +32,16 @@ example masks:
 all known dev keys:
 
 
-- ``arrow69`` creator: zero
+- ``arrow69`` creator: zero, SHA256
 
-- ``br12`` creator: zero
+- ``br12`` creator: zero, SHA256
 
-- ``brhad`` creator: zero
+- ``brhad`` creator: zero, SHA256
 
-- ``dev12``creator: let
+- ``dev12``creator: let, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening")
 
-- ``bruh68haha!`` creator: zero
+- ``bruh68haha!`` creator: zero, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening") 
 
-- ``/bruh`` (not in production)
+- ``nodevcrash`` creator: let, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening")
 
-- ``nodevcrash`` creator: let
+- ``/bruh`` (not in production)  SHA256(HEX(SHA256($pass:HEX(SHA256($pass:$salt)))) (salt: "fc8877c24d85d246e3234f2dcca3a33a842c32f81b6a8f7f60696da988a1fea4")
