@@ -53,7 +53,7 @@ all known dev keys:
 
 - ``dev12``creator: let, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening")
 
-- ``bruh69aha!`` creator: zero, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening") 
+- ``bruh69haha!`` creator: zero, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening") 
 
 - ``nodevcrash`` creator: let, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening")
 
