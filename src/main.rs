@@ -120,6 +120,11 @@ fn main() {
         // get 1000 password candidates from stdin
     	let candidates: Vec<String>  = io::stdin().lock().lines().take(1000).map(|x| x.unwrap()).collect();
 
+        if (candidates.len()==0) {
+            println!("exahsted!");
+            return;
+        }
+
         counter = counter + candidates.len();
     	   
         candidates
