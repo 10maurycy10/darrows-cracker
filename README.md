@@ -14,6 +14,8 @@ then run:
 
 you will likley have to try other masks 
 
+NOTE: large masks will result in it taking hours to days to run, use ``mp64 ?l?l?l?d?d | target/release/passwd | tee logfile`` to save output to file.
+
 ## speed
 
 This is a parralel cpu hasher, on my T480 it gets arround 1.2 MHashes per second acording to ``bench.sh``.
