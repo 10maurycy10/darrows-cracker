@@ -14,6 +14,19 @@ then run:
 
 you will likley have to try other masks 
 
+## speed
+
+This is a parralel cpu hasher, on my T480 it gets arround 1.2 MHashes per second acording to ``bench.sh``.
+
+It should exhast the ``?l?l?l?l?l?l?l?l`` [7] key space in 1.4 hours. (on a debain T480 at stock clock)
+
+Note: bench.sh will output the time to try 1M hashes. the format is
+```
+real [irl time (seconds)]
+user [total cpu time]
+sys [time spent waitng for os.]
+```
+
 ## usefull info
 
 example masks:
@@ -40,7 +53,7 @@ all known dev keys:
 
 - ``dev12``creator: let, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening")
 
-- ``bruh68haha!`` creator: zero, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening") 
+- ``bruh69aha!`` creator: zero, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening") 
 
 - ``nodevcrash`` creator: let, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening")
 
