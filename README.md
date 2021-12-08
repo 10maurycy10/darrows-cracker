@@ -4,6 +4,8 @@ This is a small rust program to crack a darrows devkey hash.
 
 ## running
 
+you should first edit the main function to update the hash_tgt.
+
 first build the binary:
 
 ``cargo build --release``
