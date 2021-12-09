@@ -4,19 +4,42 @@ This is a small rust program to crack a darrows devkey hash.
 
 ## running
 
-you should first edit the main function to update the hash_tgt.
-
 first build the binary:
 
 ``cargo build --release``
 
-then run:
+then run it:
 
-``mp64 ?l?l?l?d?d | target/release/passwd``
+``mp64 ?l?l?l?d?d | target/release/passwd aaf450a516f3ba08fceaa80687bb5c0147a515a634464517026cfcae3adea8a9``
 
-you will likley have to try other masks 
+NOTE: change the hash to the newest Hashed_key.
+
+You will likley have to try other masks 
 
 NOTE: large masks will result in it taking hours to days to run, use ``mp64 ?l?l?l?d?d | target/release/passwd | tee logfile`` to save output to file.
+
+## usage
+
+```
+target/release/passwd <hash> [amplifyer] [salt]
+
+Usage of an amplifyer is not required but highly recomended.
+Candidates are read from stdin.
+If an amplifyer is specifyed, it will be concatinated to candidates before hashing.
+
+all chars in amplifyer are interpreted as a literal exept '?' wich expands to a charset depending on the next char.
+
+l    lower case    qwertyuiopasdfghjklzxcvbnm
+u    upper case    QWERTYUIOPASDFGHJKLZXCVBNM
+L    letter        qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM
+h    hex lower     0123456789abcdef
+H    hex upper     0123456789ABCDEF
+s    symbols       ~!@#$%^&*()-_=+{[}]|\;':",./<>?
+d    digits        0123456789
+a    all           qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789~!@#$%^&*()-_=+{[}]|\;':",./<>?
+z    @ZeroTix      /!69
+
+```
 
 ## speed
 
