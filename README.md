@@ -18,6 +18,28 @@ you will likley have to try other masks
 
 NOTE: large masks will result in it taking hours to days to run, use ``mp64 ?l?l?l?d?d | target/release/passwd | tee logfile`` to save output to file.
 
+## usage
+
+```
+target/release/passwd [amplifyer]
+
+Candidates are read from stdin.
+If an amplifyer is specifyed, it will be concatinated to candidates before hashing.
+
+all chars in amplifyer are interpreted as a literal exept '?' wich expands to a charset depending on the next char.
+
+l    lower case    qwertyuiopasdfghjklzxcvbnm
+u    upper case    QWERTYUIOPASDFGHJKLZXCVBNM
+L    letter        qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM
+h    hex lower     0123456789abcdef
+H    hex upper     0123456789ABCDEF
+s    symbols       ~!@#$%^&*()-_=+{[}]|\;':",./<>?
+d    digits        0123456789
+a    all           qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789~!@#$%^&*()-_=+{[}]|\;':",./<>?
+z    @ZeroTix      /!69
+
+```
+
 ## speed
 
 This is a parralel cpu hasher, on my T480 it gets arround 1.2 MHashes per second acording to ``bench.sh``.
