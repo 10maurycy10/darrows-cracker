@@ -142,7 +142,7 @@ fn main() {
     // decode hash to binary
     let mut tgt_raw_hash = [0; 32];
     let amp_len = amp.len();
-    HEXLOWER.decode_mut(hash_tgt, &mut tgt_raw_hash).unwrap();
+    HEXLOWER.decode_mut(hash_tgt, &mut tgt_raw_hash).expect("invalid hash");
     // shadow hash_tgt
     let hash_tgt = tgt_raw_hash;
 

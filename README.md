@@ -23,8 +23,8 @@ NOTE: large masks will result in it taking hours to days to run, use ``mp64 ?l?l
 ```
 target/release/passwd <hash> [amplifyer] [salt]
 
-Usage of an amplifyer is not required but highly recomended.
 Candidates are read from stdin.
+Usage of an amplifyer is not required but highly recomended.
 If an amplifyer is specifyed, it will be concatinated to candidates before hashing.
 
 all chars in amplifyer are interpreted as a literal exept '?' wich expands to a charset depending on the next char.
