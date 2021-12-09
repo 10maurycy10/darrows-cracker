@@ -31,6 +31,8 @@ user [total cpu time]
 sys [time spent waitng for os.]
 ```
 
+NOTE: if it is not using 100% of your cpu, you may need to pass an amplifyer, which is a hashcat style mask, concatinated to password candiates.
+
 ## usefull info
 
 example masks:
