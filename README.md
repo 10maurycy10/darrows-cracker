@@ -73,7 +73,7 @@ example masks:
 ?l?l?l?l?l?l?l
 ```
 
-all known dev keys:
+all known dev keys: (This is outdated at @ZeroTx's request)
 
 
 - ``arrow69`` creator: zero, SHA256
