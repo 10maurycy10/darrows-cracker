@@ -89,5 +89,3 @@ all known dev keys: (This is outdated at @ZeroTx's request)
 - ``nodevcrash`` creator: let, SHA256($pass:$salt) (salt: "some long string to stop stuff form happening")
 
 - ``/bruh`` (not in production)  SHA256(HEX(SHA256($pass:HEX(SHA256($pass:$salt)))) (salt: "fc8877c24d85d246e3234f2dcca3a33a842c32f81b6a8f7f60696da988a1fea4")
-
-- ``/bruher`` creator: zero, SHA256(HEX(SHA256($pass:HEX(SHA256($pass:$salt)))) (salt: "fc8877c24d85d246e3234f2dcca3a33a842c32f81b6a8f7f60696da988a1fea4")
